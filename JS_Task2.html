@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 2</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: rgb(0, 0, 0);
+            font-family: cursive;
+        }
+        label {
+            color: rgb(70, 70, 26);
+            font-family: cursive;
+        }
+        input[type="text"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures the padding doesn't affect the width */
+        }
+        button {
+            background-color: lightyellow;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sorting the String</h1>
+        <label for="input">Enter the String:</label>
+        <input type="text" id="input" placeholder="Enter the String" name="input">
+        <br>
+        <button onclick="sortString()">Sort String</button>
+        <br>
+        <label for="output">Expected Output:</label>
+        <input type="text" id="output" name="output" readonly>
+    </div>
+    <script>
+        function sortString() {
+            var inputElement = document.getElementById("input");
+            var inputValue = inputElement.value;
+            var sortedValue = inputValue.split("").sort().join("");
+            var outputElement = document.getElementById("output");
+            outputElement.value = sortedValue;
+        }
+    </script>
+</body>
+</html>

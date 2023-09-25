@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 4</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: rgb(12, 12, 12);
+            font-size: 30px;
+        }
+        button {
+            padding: 10px 20px;
+            color: white;
+            background-color: rgb(8, 81, 105);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        label {
+            color: darkblue;
+            font-family: cursive;
+        }
+        p {
+            color: rgb(140, 42, 42);
+            font-size: 24px;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Date and Time</h1><br><br>
+        <button onclick="showDate()">Show Date</button><br><br>
+        <p id="display"></p><br><br>
+        <button onclick="showTime()">Show Time</button><br><br>
+        <p id="show"></p><br><br>
+    </div>
+    <script>
+        function showDate() {
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var month = monthNames[currentDate.getMonth()];
+            var year = currentDate.getFullYear();
+            var resDate = day + ' ' + month + ' ' + year;
+            document.getElementById('display').innerHTML = resDate;
+        }
+        function showTime() {
+            var currentDate = new Date();
+            var weekNames = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+            var week = weekNames[currentDate.getDay()];
+            var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var month = monthNames[currentDate.getMonth()];
+            var day = currentDate.getDate();
+            var year = currentDate.getFullYear();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var resTime = week + ' ' + month + ' ' + day + ', ' + year + ' ' + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds + ' GMT+0530 (India Standard Time)';
+            document.getElementById('show').innerHTML = resTime;
+        }
+    </script>
+</body>
+</html>
